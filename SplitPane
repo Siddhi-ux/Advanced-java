@@ -1,0 +1,31 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class SplitPaneExample extends JFrame {
+    public SplitPaneExample() {
+        setTitle("Split Pane Example");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(400, 300);
+
+        // Create the left and right panels
+        JPanel leftPanel = new JPanel();
+        JPanel rightPanel = new JPanel();
+
+        // Set the layout for the content pane
+        getContentPane().setLayout(new BorderLayout());
+
+        // Create a split pane with the left and right panels
+        JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, leftPanel, rightPanel);
+        splitPane.setDividerLocation(200); // Set the initial divider location
+
+        // Add the split pane to the content pane
+        getContentPane().add(splitPane, BorderLayout.CENTER);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            SplitPaneExample example = new SplitPaneExample();
+            example.setVisible(true);
+        });
+    }
+}
