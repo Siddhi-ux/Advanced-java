@@ -1,0 +1,36 @@
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+public class JTableExample {
+    public static void main(String[] args) {
+        // Create data for the table
+        Object[][] data = {
+                { "John", "Doe", 30 },
+                { "Jane", "Smith", 25 },
+                { "Bob", "Johnson", 35 },
+                { "Alice", "Williams", 28 }
+        };
+
+        // Create column names
+        String[] columnNames = { "First Name", "Last Name", "Age" };
+
+        // Create the JTable
+        JTable table = new JTable(data, columnNames);
+
+        // Create a scroll pane and add the table to it
+        JScrollPane scrollPane = new JScrollPane(table);
+
+        // Create a panel and add the scroll pane to it
+        JPanel panel = new JPanel();
+        panel.add(scrollPane);
+
+        // Create a frame and add the panel to it
+        JFrame frame = new JFrame("JTable Example");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(panel);
+        frame.pack();
+        frame.setVisible(true);
+    }
+}
