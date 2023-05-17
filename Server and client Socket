@@ -1,0 +1,25 @@
+Server sockets and client sockets are fundamental components of network communication in a client-server architecture. They enable communication between different entities, such as computers or processes, over a network using the Internet Protocol (IP). Let's take a closer look at the primary functionality of server sockets and client sockets:
+
+Server Sockets:
+Server sockets, also known as listening sockets, are created and managed by server applications. Their primary functionality is to listen for incoming network connections and handle client requests. Here's an overview of their main tasks:
+
+Creation and Binding: The server socket is created by the server application and bound to a specific port number on the host machine. This binding associates the socket with a particular network interface and port, enabling it to receive incoming client connections.
+
+Listening: The server socket enters a listening state, continuously monitoring the specified port for incoming connection requests from client sockets. It waits for clients to establish connections.
+
+Accepting Connections: When a client socket attempts to connect to the server socket, the server socket accepts the incoming connection request, creating a new socket known as the client socket. The server socket then resumes listening for further connections while the client socket handles the communication with the connected client.
+
+Handling Requests: Once a client socket is accepted, the server application can receive and process client requests, exchange data, and provide services or responses based on the client's requirements. The server socket is responsible for managing multiple client connections concurrently, either sequentially or by using techniques such as multithreading or asynchronous I/O.
+
+Client Sockets:
+Client sockets are created by client applications to establish connections with server sockets. They facilitate communication between the client and the server. Here are the primary functions of client sockets:
+
+Establishing Connections: The client socket initiates a connection request to the server socket by specifying the server's IP address and port number. It tries to establish a reliable connection with the server socket to enable data exchange.
+
+Connecting: The client socket attempts to establish a connection with the server socket by sending a connection request. If the server socket is actively listening and accepts the connection, a successful connection is established, and the client socket enters the connected state.
+
+Data Exchange: Once the connection is established, the client socket can send data to the server and receive responses or data from the server. It allows clients to communicate their requests, transmit data, and receive server-side services or information.
+
+Closing Connections: When the client no longer needs the connection, it can initiate the closure of the connection. The client socket sends a termination request to the server socket, and both ends gracefully close the connection, freeing up resources.
+
+In summary, server sockets listen for incoming connections, accept client connection requests, and handle client communication, while client sockets establish connections with server sockets and enable data exchange between the client and the server. Together, server sockets and client sockets form the backbone of network communication in client-server systems.
